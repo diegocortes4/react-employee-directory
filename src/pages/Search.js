@@ -12,8 +12,11 @@ class Search extends Component {
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentDidMount() {
-    API.getBaseEmployeesList()
-      .then(res => this.setState({ Employees: res.data}))
+    API.getRandomEmployee()
+      .then((res) => {
+          this.setState({ Employees: res.data})
+        console.log (this.state.Employees)
+        })
       .catch(err => console.log(err));
   }
 
