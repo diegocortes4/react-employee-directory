@@ -26,7 +26,7 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
+    API.getRandomEmployee(this.state.search)
       .then(res => {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
@@ -38,7 +38,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-          <h1 className="text-center">Search By Name!</h1>
+          <h1 className="text-center">Employee Directory</h1>
          
           <SearchForm
             handleFormSubmit={this.handleFormSubmit}
